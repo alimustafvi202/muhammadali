@@ -34,8 +34,8 @@
             </div>
     <p>As a full-stack developer and graphic designer, I combine technical skills with creative design to build user-friendly, visually engaging websites and applications. My focus on color theory, typography, and responsive design ensures both functionality and aesthetic appeal in every project.</p>
          <div class="btn-section">
-                <button class="btn">Hire me</button>
-                <button class="btn">Let's Talk</button>
+            <button class="btn" onclick="location.href='#contact'">Hire me</button>
+            <button class="btn" onclick="location.href='#contact'">Let's Talk</button>            
             </div>
             <div class="social-media">
                 <a href="https://www.facebook.com/alimustafviofficial1" target="_blank">
@@ -213,20 +213,67 @@
     <!-- *************************Contact Section************************* -->
     <section class="contact" id="contact">
         <h2 class="title">Contact <span>Me</span></h2>
-        <form action="#" id="">
+        <form id="contactForm">
             <div class="input-box">
-    <input type="text" required placeholder="Full Name">
-    <input type="email" required placeholder="Email">
+                <input type="text" name="name" required placeholder="Full Name">
+                <input type="email" name="email" required placeholder="Email">
             </div>
             <div class="input-box">
-    <input type="tel" required placeholder="Mobile Number">
-    <input type="email" required placeholder="Subject For">
+                <input type="tel" name="phone" required placeholder="Mobile Number">
+                <input type="text" name="subject" required placeholder="Subject For">
             </div>
-    <textarea name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
-    <input type="submit" value="Send Message" class="btn">
+            <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
         </form>
-
     </section>
+    
+    <!-- Include SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script>
+        const contactForm = document.getElementById('contactForm');
+    
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+    
+            const formData = new FormData(contactForm);
+            formData.append('access_key', 'c5a3dc37-f067-46ec-a5df-284ba7ec7f04'); // Replace with your Web3Forms access key
+    
+            const data = Object.fromEntries(formData.entries());
+            const json = JSON.stringify(data);
+    
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: json,
+                });
+                const result = await response.json();
+    
+                if (result.success) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Message Sent Successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                    contactForm.reset(); // Reset the form
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to send message. Please try again later.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
+    
     <footer>
         <div class="text">
             <p>Copyright @ 2023 by Muhammad Ali</p>
