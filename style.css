@@ -837,11 +837,11 @@ footer i{
     transform: translateY(100px);
     top: 10rem;
     opacity: 0;
-    animation: top .5s ease forwards;
+    animation: top .1s ease forwards;
 }
 @keyframes top{
     0%{
-        transform: translateY(-100px);
+        transform: translateY(100px);
         opacity: 0;
     }
     100%{
