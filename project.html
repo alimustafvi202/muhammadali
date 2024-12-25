@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Muhammad Ali</a>
+        <i class='bx bx-menu' id="menu" style='color:#ffffff'></i>
+        <nav class="navbar">
+            <a href="index.html#home" style="--vlr:1" class="active">Home</a>
+            <a href="index.html#about" style="--vlr:2">About Me</a>
+            <a href="index.html#recent-project" style="--vlr:2">My Work</a>
+            <a href="index.html#education" style="--vlr:3">Education</a>
+            <a href="index.html#skills" style="--vlr:4">Skills</a>
+            <a href="index.html#contact" style="--vlr:5">Contact Me</a>
+        </nav>
+    </header>
+
+    <section class="recents-projects">
+        <h2 class="title">My Recent <span>Project</span></h2>
+        <div class="btns-section">
+            <button class="btns" onclick="filterProjects('graphic')">Graphic Designing</button>
+            <button class="btns" onclick="filterProjects('fullstack')">Full Stack Developer</button>
+        </div>
+        <div class="projects-container">
+            <!-- Graphic Designing Projects -->
+            <div class="projects graphic active">
+                <img src="logo.png" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Logo Design</h3>
+                    <div class="btn-icon">
+                        <a href="logo.png" download="logo.png" class="main-btn">
+                            <span class="btn-text">Download Logo</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="projects graphic active">
+                <img src="Poster.png" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Poster Design</h3>
+                    <div class="btn-icon">
+                        <a href="Poster.png" download="Poster.png" class="main-btn">
+                            <span class="btn-text">Download Poster</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="projects graphic active">
+                <img src="AICE.png" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Banner Design</h3>
+                    <div class="btn-icon">
+                        <a href="Banner.png" download="Banner.png" class="main-btn">
+                            <span class="btn-text">Download Banner</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="projects graphic active">
+                <img src="summer.jpg" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Flyer Design</h3>
+                    <div class="btn-icon">
+                        <a href="summer.jpg" download="Flyer.jpg" class="main-btn">
+                            <span class="btn-text">Download Flyer</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+                            
+                <div class="projects graphic active">
+                <img src="Event Card.jpg" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Student Card Design</h3>
+                    <div class="btn-icon">
+                        <a href="Card.jpg" download="Card.jpg" class="main-btn">
+                            <span class="btn-text">Download Card</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects graphic active">
+                <img src="my.png" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Bussiness Card Design</h3>
+                    <div class="btn-icon">
+                        <a href="Card.png" download="Card.png" class="main-btn">
+                            <span class="btn-text">Download Bussiness  Card</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects graphic active">
+                <img src="broucher.jpg" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Broucher Design</h3>
+                    <div class="btn-icon">
+                        <a href="broucher.jpg" download="Broucher.jpg" class="main-btn">
+                            <span class="btn-text">Download Broucher</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+                        
+
+
+            <!-- Full Stack Development Projects -->
+            <div class="projects fullstack">
+                <img src="book.png" alt="Project Image">
+                <div class="project-info">
+                    <h3>Book Storing Website</h3>
+                    <p>Built a booking and storing website designed for easy management and organization of reservations and data.</p>
+                </div>
+            </div>
+    
+            <div class="projects fullstack">
+                <img src="chatbot.png" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Jarvis Personal Assistant</h3>
+                    <p>Developed a Jarvis-style personal assistant to provide efficient task management and seamless user interaction.</p>
+                </div>
+            </div>
+    
+            <div class="projects fullstack">
+                <img src="vote.png" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Voting System</h3>
+                    <p>Created an online voting system to ensure secure and transparent voting processes.</p>
+                </div>
+            </div>
+
+            <div class="projects fullstack">
+                <img src="portfolio.png" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Portfolio</h3>
+                    <p>Developed a dynamic portfolio website showcasing my skills, projects, and achievements in software development and design.</p>
+                </div>
+            </div>
+
+            <div class="projects fullstack">
+                <img src="webiste.png" alt="Project Image">
+                <div class="projects-info">
+                    <h3>Company Website</h3>
+                    <p>
+                        Built a professional company website to highlight services, projects, and the innovative solutions offered by the company.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <footer>
+        <div class="text">
+            <p>Copyright @ 2023 by Muhammad Ali</p>
+        </div>
+       <a href="#"> <i class='bx bx-up-arrow-alt'></i></a>
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>

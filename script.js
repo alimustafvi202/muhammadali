@@ -26,3 +26,24 @@ window.onscroll = ()=>{
     menubar.classList.remove('bx-x');
     Navbar.classList.remove('active')
 } 
+
+// Ensure initial state shows Graphic Designing projects
+window.addEventListener('DOMContentLoaded', () => {
+    filterProjects('graphic');
+});
+
+function filterProjects(category) {
+    const projects = document.querySelectorAll('.projects');
+    
+    // Hide all projects
+    projects.forEach(project => {
+        project.classList.remove('active');
+    });
+
+    // Show only the selected category
+    const selectedProjects = document.querySelectorAll(`.projects.${category}`);
+    selectedProjects.forEach(project => {
+        project.classList.add('active');
+    });
+}
+

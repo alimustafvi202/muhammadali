@@ -182,6 +182,7 @@ section{
         opacity: 1;
     }
 }
+
 .btn-section{
     width: 32.5rem;
     height: 5rem;
@@ -849,7 +850,6 @@ footer i{
     }
 }
 
-
 .project-info .btn:hover {
     background: #ff00ee;
     border-color: #ff00ee;
@@ -862,8 +862,293 @@ footer i{
         align-items: center;
     }
 
-    .project {
+    .project                                                                                                                                                                                                                                                 {
         width: 80%;
         margin-bottom: 2rem;
     }
+}
+
+
+.btns-section {
+    width: 32.5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    align-items: center;
+    position: relative; /* Use absolute positioning */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for true center */
+    margin-bottom: 3rem;
+}
+
+.btns-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #0f0a0a;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    animation: Slide 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+@keyframes Slide {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.btns {
+    height: 100%;
+    width: 15rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.2rem solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5rem);
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+}
+
+.btns::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -100%;
+    height: 300%;
+    width: 100%;
+    background: linear-gradient(#0f0a0a, #ff00ee, #0f0a0a, #ff00ee);
+    z-index: -1;
+    transition: 0.5s ease; /* Transition for gradient animation */
+}
+
+.btns:hover::before {
+    top: 0;
+}
+
+.btns:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    background: rgba(255, 255, 255, 0.2); /* Enhance the hover effect */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .btns-section {
+        width: 100%; /* Full width for smaller screens */
+        height: auto;
+        flex-direction: row; /* Keep buttons in the same line */
+        justify-content: space-evenly; /* Evenly distribute space between buttons */
+        align-items: center; /* Center align */
+        left: 0; /* Reset the left position */
+        margin-bottom: 3rem;
+        
+    }
+
+    .btns {
+        width: 12rem; /* Reduce button width */
+        height: 6rem; /* Reduce button height */
+        font-size: 1.5rem; /* Adjust font size */
+        margin-bottom: 0; /* Remove vertical spacing */
+    }
+    .btns:nth-of-type(1) {
+        margin-left: 0rem; /* Add space below the first button */
+    }
+    
+    .btns:nth-of-type(2) {
+        margin-left: -12rem; /* Add space above the second button */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .btns-section {
+        justify-content: center; /* Center align buttons */
+        gap: 0.5rem; /* Reduced space between buttons */
+    }
+
+    .btns {
+        width: 10rem; /* Further reduce button width */
+        height: 5rem; /* Further reduce button height */
+        font-size: 1rem; /* Adjust font size for very small screens */
+    }
+    .projects .btns:nth-of-type(1) {
+        margin-left: 1rem; /* Add space below the first button */
+    }
+    
+    .projects .btns:nth-of-type(2) {
+        margin-right: 1rem; /* Add space above the second button */
+    }
+}
+
+
+
+
+
+/* Recent Project Section Next Page */
+.recents-projects {
+    padding: 5rem 9%;
+    background: #0f0a0a;
+    color: #fff;
+    min-height: 100vh;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.recents-projects .title {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.recents-projects .title span {
+    color: #ff00ee;
+}
+
+.projects-container {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projects {
+    width: 30rem;
+    height: 30rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.2rem solid rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem #ff00ee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Ensure content stays inside the box */
+}
+
+.projects:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 1rem #ff00ee, 0 0 2rem #ff00ee;
+}
+
+.projects img {
+    width: 100%;
+    height: 60%; /* Adjust height of image to fill half the card */
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.projects-info {
+    padding: 1.5rem;
+    flex-grow: 1; /* Ensure info area takes up remaining space */
+}
+
+.projects-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: rem;
+}
+
+.projects-info p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.recents-projects .btn{
+    padding: .9rem .5rem;
+    transform: translateY(100px);
+    top: 10rem;
+    opacity: 0;
+    animation: top .5s ease forwards;
+}
+@keyframes top{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.projects-info .btn:hover {
+    background: #ff00ee;
+    border-color: #ff00ee;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects                                                                                                                                                                                                                                                 {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Hide projects by default */
+.projects {
+    display: none;
+}
+
+/* Active projects are displayed */
+.projects.active {
+    display: block;
+}
+
+
+
+
+/* Download Button */
+.main-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    background: #ff00ee;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 238, 0.5);
+}
+
+.main-btn:hover {
+    background: #e600d5;
+    box-shadow: 0 0 15px rgba(255, 0, 238, 0.8);
+}
+
+.main-btn .btn-icon {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.main-btn .btn-text {
+    display: inline-block;
+}
+
+/* Align Button */
+.btn-icon {
+    margin-top: 1rem;
+    text-align: center;
 }
